@@ -55,7 +55,7 @@ def minimize_lateness(tarefas: list[dict]) -> dict:
     for tarefa in tarefas_ordenadas:
         inicio = tempo_atual
         fim = inicio + tarefa["duracao"]
-        lateness = fim - tarefa["deadline"]
+        lateness = max(0, fim - tarefa["deadline"])
 
         detalhes.append({
             "tarefa": tarefa,

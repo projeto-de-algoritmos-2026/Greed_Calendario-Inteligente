@@ -143,7 +143,7 @@ def tela_adicionar_tarefa(stdscr, tarefas):
     except ValueError:
         stdscr.erase()
         desenhar_topo(stdscr)
-        safe_addstr(stdscr, 4, 2, "ERRO: Duração deve ser um numero inteiro.",
+        safe_addstr(stdscr, 4, 2, "ERRO: Duração deve ser um número inteiro.",
                     curses.color_pair(C_ERROR) | curses.A_BOLD)
         safe_addstr(stdscr, 6, 2, "Pressione qualquer tecla para voltar.",
                     curses.color_pair(C_DIM))
@@ -208,10 +208,10 @@ def tela_adicionar_tarefa(stdscr, tarefas):
     desenhar_linha_h(stdscr, 2)
     safe_addstr(stdscr, 4, 2, "Tarefa adicionada com sucesso!",
                 curses.color_pair(C_SUCCESS) | curses.A_BOLD)
-    safe_addstr(stdscr, 6, 4, f"Nome   : {nome}", curses.color_pair(C_DIM))
-    safe_addstr(stdscr, 7, 4, f"Duracao: {duracao} dia(s)", curses.color_pair(C_DIM))
+    safe_addstr(stdscr, 6, 4, f"Nome    : {nome}", curses.color_pair(C_DIM))
+    safe_addstr(stdscr, 7, 4, f"Duração : {duracao} dia(s)", curses.color_pair(C_DIM))
     safe_addstr(stdscr, 8, 4,
-                f"Prazo  : dia {deadline} ({data_prazo.strftime('%d/%m/%Y')})",
+                f"Prazo   : dia {deadline} ({data_prazo.strftime('%d/%m/%Y')})",
                 curses.color_pair(C_DIM))
     safe_addstr(stdscr, 10, 2, "Pressione qualquer tecla para voltar.",
                 curses.color_pair(C_DIM))
@@ -234,7 +234,7 @@ def tela_listar_tarefas(stdscr, tarefas):
         safe_addstr(stdscr, 6, 4, "Nenhuma tarefa cadastrada ainda.",
                     curses.color_pair(C_WARNING))
     else:
-        cab = f"  {'#':>2}  {'Nome':<24}  {'Dur':>5}  {'Prazo':>7}  {'Data':>10}"
+        cab = f"  {'#':>2}  {'Nome':<24}  {'Duração':>5}  {'Prazo':>7}  {'Data':>10}"
         safe_addstr(stdscr, 5, 2, cab, curses.color_pair(C_TITLE) | curses.A_BOLD)
         safe_addstr(stdscr, 6, 2, "-" * min(60, max_x - 4), curses.color_pair(C_BORDER))
 
@@ -273,18 +273,6 @@ def tela_resultado(stdscr, tarefas):
 
     try:
         resultado = minimize_lateness(tarefas)
-    except NotImplementedError:
-        stdscr.erase()
-        desenhar_topo(stdscr)
-        safe_addstr(stdscr, 4, 2, "scheduler.py ainda nao foi implementado.",
-                    curses.color_pair(C_WARNING) | curses.A_BOLD)
-        safe_addstr(stdscr, 5, 2, "Complete a funcao minimize_lateness() la.",
-                    curses.color_pair(C_DIM))
-        safe_addstr(stdscr, 7, 2, "Pressione qualquer tecla para voltar.",
-                    curses.color_pair(C_DIM))
-        stdscr.refresh()
-        stdscr.getch()
-        return
     except Exception as e:
         stdscr.erase()
         desenhar_topo(stdscr)
@@ -309,12 +297,12 @@ def tela_resultado(stdscr, tarefas):
         safe_addstr(stdscr, 3, 2, "RESULTADO: Todas as tarefas no prazo!",
                     curses.color_pair(C_SUCCESS) | curses.A_BOLD)
     else:
-        safe_addstr(stdscr, 3, 2, f"RESULTADO: Atraso maximo = {max_lateness} dia(s)",
+        safe_addstr(stdscr, 3, 2, f"RESULTADO: Atraso máximo = {max_lateness} dia(s)",
                     curses.color_pair(C_ERROR) | curses.A_BOLD)
 
     desenhar_linha_h(stdscr, 4)
 
-    cab = f"  {'#':>2}  {'Nome':<20}  {'Ini':>4}  {'Fim':>4}  {'Prazo':>5}  {'Lateness':>8}"
+    cab = f"  {'#':>2}  {'Nome':<20}  {'Início':>4}  {'Fim':>4}  {'Prazo':>5}  {'Lateness':>8}"
     safe_addstr(stdscr, 5, 2, cab, curses.color_pair(C_TITLE) | curses.A_BOLD)
     safe_addstr(stdscr, 6, 2, "-" * min(62, max_x - 4), curses.color_pair(C_BORDER))
 
@@ -327,9 +315,10 @@ def tela_resultado(stdscr, tarefas):
         t  = det["tarefa"]
         lt = det["lateness"]
         cor = C_ERROR if lt > 0 else C_SUCCESS
+        lt_formatado = f"{lt:>8}" if lt == 0 else f"{lt:>+8}"
         texto = (f"  {t['id']:>2}  {t['nome']:<20.20}  "
                  f"{det['inicio']:>4}  {det['fim']:>4}  "
-                 f"{t['deadline']:>5}  {lt:>+8}")
+                 f"{t['deadline']:>5}  {lt_formatado}")
         safe_addstr(stdscr, linha, 2, texto, curses.color_pair(cor))
 
     linha_rodape = min(7 + len(detalhes) + 1, max_y - 3)
@@ -352,7 +341,7 @@ def tela_limpar(stdscr, tarefas):
         safe_addstr(stdscr, 8, 2, "Todas as tarefas foram removidas.",
                     curses.color_pair(C_SUCCESS) | curses.A_BOLD)
     else:
-        safe_addstr(stdscr, 8, 2, "Operacao cancelada.",
+        safe_addstr(stdscr, 8, 2, "Operação cancelada.",
                     curses.color_pair(C_DIM))
     safe_addstr(stdscr, 10, 2, "Pressione qualquer tecla para voltar.",
                 curses.color_pair(C_DIM))
