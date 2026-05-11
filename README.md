@@ -1,4 +1,4 @@
-# NomedoProjeto
+# Calendário Inteligente
 
 **Número da Lista**: 2<br>
 **Conteúdo da Disciplina**: Algoritmos Ambiciosos<br>
@@ -9,19 +9,68 @@
 | 23/1011220 | Davi Camilo Menezes |
 | 23/1011800 | Rafael Welz Schadt |
 
-## Sobre 
+## Sobre
 Descreva os objetivos do seu projeto e como ele funciona. 
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+A seguir estão imagens do projeto em funcionamento.
 
-## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+- Menu principal (com todas as funcionalidades):
 
-## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+![alt text](docs/assets/imagem1.png)
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+- Adicionar uma tarefa:
+
+![alt text](docs/assets/imagem2.png)
+
+![alt text](docs/assets/imagem3.png)
+
+- Visualizar tarefas cadastradas:
+
+![alt text](docs/assets/imagem4.png)
+
+![alt text](docs/assets/imagem5.png)
+> Caso não haja tarefa cadastrada.
+
+- Agendamento para minimizar o atraso (cálculo do atraso máximo):
+
+![alt text](docs/assets/imagem6.png)
+> Situação em que existe atraso.
+
+![alt text](docs/assets/imagem7.png)
+> Situação em que não existe atraso.
+
+![alt text](docs/assets/imagem8.png)
+> Caso não haja tarefas para escalonar.
+
+- Excluir todas as tarefas
+
+![alt text](docs/assets/imagem9.png)
+
+![alt text](docs/assets/imagem10.png)
+
+## Instalação
+**Linguagem**: Python<br>
+**Framework**: Não foi utilizado<br>
+**Pré-requisitos:** <br>
+
+### Como rodar
+
+...
+
+## Uso
+Como mostrado nas screenshots do trabalho, ao iniciar o programa, o usuário terá acesso ao menu principal com as seguintes opções:
+
+1. **Adicionar Tarefa**: cadastra uma nova tarefa informando nome, duração em dias e prazo final;
+2. **Listar Tarefas**: exibe todas as tarefas cadastradas;
+3. **Escalonar tarefas**: aplica o algoritmo ambicioso e mostra a ordem de execução, o início, o fim, o prazo e o atraso de cada tarefa, indicando ainda o atraso máximo (caso houver);
+4. **Limpar todas as tarefas**: remove os dados que foram cadastrados durante a execução;
+5. **Sair**: encerra o programa.
+
+O prazo pode ser informado de duas formas:
+
+- por uma data no formato `DD/MM/AAAA`;
+- por um número inteiro, representando a quantidade de dias a partir da data atual.
+
+## Vídeo de Apresentação
+Link para o vídeo de apresentação e demonstração do trabalho: [Clique aqui]()
