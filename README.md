@@ -10,7 +10,9 @@
 | 23/1011800 | Rafael Welz Schadt |
 
 ## Sobre
-Descreva os objetivos do seu projeto e como ele funciona. 
+O **Calendário Inteligente** é uma aplicação de interface de linha de comando (CLI) focada no agendamento e otimização de tarefas. O objetivo principal do projeto é aplicar os conceitos de **Algoritmos Ambiciosos (Greedy)**, utilizando o problema de Minimização de Atraso Máximo (*Minimize Lateness*). 
+
+O sistema funciona recebendo uma lista de tarefas, cada uma com uma duração e um prazo final (*deadline*). Ao solicitar o escalonamento, o programa aplica a estratégia **Earliest Deadline First (EDF)**, priorizando a execução das tarefas com os prazos mais curtos. O algoritmo garante a ordem ideal de execução para que, caso o atraso seja inevitável, o maior atraso sofrido por qualquer tarefa seja o menor possível.
 
 ## Screenshots
 A seguir estão imagens do projeto em funcionamento.
@@ -50,13 +52,35 @@ A seguir estão imagens do projeto em funcionamento.
 ![alt text](docs/assets/imagem10.png)
 
 ## Instalação
-**Linguagem**: Python<br>
+**Linguagem**: Python 3.x<br>
 **Framework**: Não foi utilizado<br>
-**Pré-requisitos:** <br>
+**Pré-requisitos:** O projeto utiliza a biblioteca `curses` para a interface gráfica no terminal. Ela já vem instalada por padrão em sistemas **Linux** e **macOS**. Caso você utilize **Windows**, será necessário instalar um pacote adicional via `pip`.
 
 ### Como rodar
+1. Clone o repositório para a sua máquina:
+```bash
+git clone [https://github.com/projeto-de-algoritmos-2026/Greed_Calendario-Inteligente.git]
+```
 
-...
+2. Navegue até a pasta do projeto:
+```bash
+cd cd Greed_Calendario-Inteligente
+```
+
+3. Entre na pasta src:
+```bash
+cd cd src
+```
+
+4. OPCIONAL - Caso esteja usando Windows, instale a seguinte dependência:
+```bash
+pip install windows-curses
+```
+
+5. Execute da seguinte maneira:
+```bash
+cd python main.py
+```
 
 ## Uso
 Como mostrado nas screenshots do trabalho, ao iniciar o programa, o usuário terá acesso ao menu principal com as seguintes opções:
