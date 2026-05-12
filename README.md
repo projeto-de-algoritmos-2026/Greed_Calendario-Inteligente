@@ -59,17 +59,17 @@ A seguir estão imagens do projeto em funcionamento.
 ### Como rodar
 1. Clone o repositório para a sua máquina:
 ```bash
-git clone [https://github.com/projeto-de-algoritmos-2026/Greed_Calendario-Inteligente.git]
+git clone https://github.com/projeto-de-algoritmos-2026/Greed_Calendario-Inteligente.git
 ```
 
 2. Navegue até a pasta do projeto:
 ```bash
-cd cd Greed_Calendario-Inteligente
+cd Greed_Calendario-Inteligente
 ```
 
 3. Entre na pasta src:
 ```bash
-cd cd src
+cd src
 ```
 
 4. OPCIONAL - Caso esteja usando Windows, instale a seguinte dependência:
