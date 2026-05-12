@@ -97,4 +97,4 @@ O prazo pode ser informado de duas formas:
 - por um número inteiro, representando a quantidade de dias a partir da data atual.
 
 ## Vídeo de Apresentação
-Link para o vídeo de apresentação e demonstração do trabalho: [Clique aqui]()
+Link para o vídeo de apresentação e demonstração do trabalho: [Clique aqui](https://youtu.be/IKaOT2aeHak?si=lu841JBCtQGEwUGo)
